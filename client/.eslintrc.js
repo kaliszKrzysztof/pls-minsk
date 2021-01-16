@@ -4,14 +4,7 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: [
-    'airbnb',
-    'plugin:react/recommended',
-    'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended',
-    // 'plugin:prettier/recommended',
-    // 'prettier/@typescript-eslint',
-  ],
+  extends: ['airbnb', 'plugin:@typescript-eslint/eslint-recommended', 'plugin:@typescript-eslint/recommended'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -22,6 +15,9 @@ module.exports = {
   },
   plugins: ['@typescript-eslint', 'react', 'prettier'],
   rules: {
+    'no-underscore-dangle': 'off',
+    'object-curly-newline': 'off',
+    'import/prefer-default-export': 'off',
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['error'],
     'no-unused-vars': 'off',
@@ -44,6 +40,13 @@ module.exports = {
     ],
     'import/extensions': 0,
     'operator-linebreak': 'off',
+    'jsx-a11y/anchor-is-valid': [
+      'warn',
+      {
+        aspects: ['invalidHref'],
+      },
+    ],
+    'react/jsx-one-expression-per-line': 'off',
     'react/jsx-props-no-spreading': 0,
     'react/jsx-wrap-multilines': [
       'error',
@@ -72,6 +75,14 @@ module.exports = {
       },
     ],
   },
+  overrides: [
+    {
+      files: ['**/*.tsx'],
+      rules: {
+        'react/prop-types': 'off',
+      },
+    },
+  ],
   settings: {
     react: {
       version: 'detect',
