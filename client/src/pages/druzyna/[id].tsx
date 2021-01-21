@@ -8,20 +8,21 @@ import matchesData from 'data/matches';
 import Team from 'components/Team';
 import Matches from 'components/Matches';
 import PageHeader from 'components/PageHeader';
-import { getMatchesByTeam } from 'helpers/match';
+import { getMatchesByTeam, getTeamPostponedMatches } from 'helpers/match';
 import Container from 'components/Container';
 
 interface TeamProps {
   team: ITeam;
   matches: Match[];
+  postponedMatches: Match[];
 }
 
-const TeamPage: NextPage<TeamProps> = ({ team, matches }) => (
+const TeamPage: NextPage<TeamProps> = ({ team, matches, postponedMatches }) => (
   <Container component="main" className="py-12">
     <Team team={team} />
     {matches.length > 0 && (
       <>
-        <PageHeader component="h2" text="Mecze" />
+        <PageHeader component="h2" text={`Mecze (przełożonych:  ${postponedMatches.length})`} />
         <Matches matches={matches} />
       </>
     )}
@@ -44,6 +45,7 @@ export const getStaticProps: GetStaticProps<TeamProps, Params> = async (context)
   const params = context.params as Params;
   const team = getTeamById(params.id);
   const matches = getMatchesByTeam(params.id, matchesData);
+  const postponedMatches = getTeamPostponedMatches(params.id, matchesData);
 
   if (!team) {
     return {
@@ -55,6 +57,7 @@ export const getStaticProps: GetStaticProps<TeamProps, Params> = async (context)
     props: {
       team,
       matches,
+      postponedMatches,
     },
   };
 };

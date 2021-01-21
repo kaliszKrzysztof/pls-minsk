@@ -11,3 +11,5 @@ export const getMatchById = (matchId: string, matches: Match[]): Match | undefin
   matches.find((match) => match.id === matchId);
 
 export const getPostponedMatches = (matches: Match[]): Match[] => matches.filter((match) => match.isPostponed);
+export const getTeamPostponedMatches = (teamId: string, matches: Match[]): Match[] =>
+  matches.filter((match) => match.isPostponed && match.isPostponed.id === teamId);

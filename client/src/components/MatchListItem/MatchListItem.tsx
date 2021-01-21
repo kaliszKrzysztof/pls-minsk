@@ -12,10 +12,10 @@ interface MatchListItemProps {
 const MatchListItem: React.FC<MatchListItemProps> = ({ match, className = '', displayDate }) => {
   const { host, hostScore, guest, guestScore, isPostponed, queue } = match;
   return (
-    <div className={`border-b overflow-hidden ${className} ${isPostponed ? 'bg-gray-200' : ''}`}>
+    <div className={`border-b overflow-hidden ${className} ${isPostponed ? 'bg-gray-300' : ''}`}>
       <div>
         {displayDate && (
-          <div className="w-full md:w-auto md:mr-4 text-center">
+          <div className="w-full text-center">
             <p className="text-lg md:text-xl">Kolejka {queue.number}</p>
             <p className="text-lg md:text-xl">{dayjs(queue.date).format('DD.MM.YYYY')}</p>
           </div>
