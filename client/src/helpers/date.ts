@@ -10,4 +10,8 @@ dayjs.extend(timezone);
 dayjs.locale('pl');
 dayjs.extend(relativeTime);
 
-export { dayjs };
+console.log(dayjs.tz.guess());
+
+const parse = (input: any) => dayjs(input).tz('Europe/Warsaw');
+
+export { parse };

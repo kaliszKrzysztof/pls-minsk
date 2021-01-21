@@ -4,7 +4,7 @@ import { getCurrentQueue, getQueueByNumber } from 'helpers/queue';
 import { Match, Queue } from 'types';
 import matchesData from 'data/matches';
 import queuesData from 'data/queues';
-import { dayjs } from 'helpers/date';
+import { parse } from 'helpers/date';
 import Container from 'components/Container';
 import PageHeader from 'components/PageHeader';
 import MatchListItem from 'components/MatchListItem';
@@ -23,7 +23,7 @@ const Matches: NextPage<MatchesProps> = ({ matches, queues, activeQueue }) => (
       <>
         <PageHeader
           component="h2"
-          text={`Kolejka ${activeQueue.number} - ${dayjs(activeQueue.date).format('DD.MM.YYYY')}`}
+          text={`Kolejka ${activeQueue.number} - ${parse(activeQueue.date).format('DD.MM.YYYY')}`}
         />
         <QueuePicker queues={queues} activeQueue={activeQueue} />
         <div className="bg-white shadow-md">

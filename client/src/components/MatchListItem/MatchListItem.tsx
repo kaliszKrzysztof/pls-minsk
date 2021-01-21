@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import { Match } from 'types';
-import { dayjs } from 'helpers/date';
+import { parse } from 'helpers/date';
 
 interface MatchListItemProps {
   match: Match;
@@ -17,7 +17,7 @@ const MatchListItem: React.FC<MatchListItemProps> = ({ match, className = '', di
         {displayDate && (
           <div className="w-full text-center">
             <p className="text-lg md:text-xl">Kolejka {queue.number}</p>
-            <p className="text-lg md:text-xl">{dayjs(queue.date).format('DD.MM.YYYY')}</p>
+            <p className="text-lg md:text-xl">{parse(queue.date).format('DD.MM.YYYY')}</p>
           </div>
         )}
         <div className="flex-1 flex flex-wrap items-center justify-center py-2">
