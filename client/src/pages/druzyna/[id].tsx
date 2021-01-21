@@ -22,7 +22,10 @@ const TeamPage: NextPage<TeamProps> = ({ team, matches, postponedMatches }) => (
     <Team team={team} />
     {matches.length > 0 && (
       <>
-        <PageHeader component="h2" text={`Mecze (przełożonych:  ${postponedMatches.length})`} />
+        <PageHeader
+          component="h2"
+          text={postponedMatches.length > 0 ? `Mecze (liczba przełożonych:  ${postponedMatches.length})` : 'Mecze'}
+        />
         <Matches matches={matches} />
       </>
     )}
