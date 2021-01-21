@@ -1,46 +1,37 @@
 import React from 'react';
-import TestComponent from 'components/TestComonent';
-import NavBar from 'components/NavBar';
-import { withUrqlClient } from 'next-urql';
-import { createUrqlClient } from 'utils/createUrqlClient';
-import { usePostsQuery } from 'generated/graphql';
+import { GetStaticProps, NextPage } from 'next';
+import { Match } from 'types';
+import matchesData from 'data/matches';
+import Container from 'components/Container';
+import PageHeader from 'components/PageHeader';
+import MatchListItem from 'components/MatchListItem';
+import { getPostponedMatches } from 'helpers/match';
 
-const Home = () => {
-  const [variables, setVariables] = React.useState<{ limit: number; cursor: string | null }>({
-    limit: 5,
-    cursor: null,
-  });
-  const [{ data, fetching }] = usePostsQuery({
-    variables,
-  });
+interface HomepageProps {
+  postponedMatches: Match[];
+}
 
-  const posts = data?.posts.posts;
-  const hasMore = data?.posts.hasMore;
-  return (
-    <>
-      <NavBar />
-      <TestComponent />
-      {posts &&
-        posts.map((p) => (
-          <div key={p.id}>
-            <p>{p.title}</p>
-            <p>{p.textSnippet}</p>
-          </div>
-        ))}
+const Homepage: NextPage<HomepageProps> = ({ postponedMatches }) => (
+  <Container component="main" className="py-12">
+    <PageHeader component="h1" text="Aktualności" />
+    <p className="text-lg text-center mb-4">Nie ma żadnych nowych wpisów</p>
+    {postponedMatches.length > 0 && (
+      <>
+        <PageHeader component="h1" text="Zaległe mecze" />
+        <div className="bg-white shadow-md">
+          {postponedMatches.map((match) => (
+            <MatchListItem className="px-4 py-4" key={match.id} match={match} displayDate />
+          ))}
+        </div>
+      </>
+    )}
+  </Container>
+);
 
-      {posts && hasMore && (
-        <button
-          type="button"
-          disabled={fetching}
-          onClick={() => {
-            setVariables({ limit: variables.limit, cursor: posts[posts.length - 1].createdAt });
-          }}
-        >
-          Load more
-        </button>
-      )}
-    </>
-  );
-};
+export const getStaticProps: GetStaticProps = async () => ({
+  props: {
+    postponedMatches: getPostponedMatches(matchesData),
+  },
+});
 
-export default withUrqlClient(createUrqlClient, { ssr: true })(Home);
+export default Homepage;
