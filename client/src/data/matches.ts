@@ -39,18 +39,30 @@ export const createMatch = (params: CreateMatchParams): Match => ({
 // queue1
 export const q1m1 = createMatch({ host: pvu, guest: kaluszyn, hostScore: 0, guestScore: 3, queue: queue1 });
 export const q1m2 = createMatch({ host: ekonom, guest: halinow, hostScore: 3, guestScore: 0, queue: queue1 });
-export const q1m3 = createMatch({ host: fabos, guest: brzoze, hostScore: 0, guestScore: 0, queue: queue1 });
+export const q1m3 = createMatch({
+  host: fabos,
+  guest: brzoze,
+  hostScore: 3,
+  guestScore: 0,
+  queue: queue1,
+});
 export const q1m4 = createMatch({ host: watra, guest: blackteam, hostScore: 3, guestScore: 0, queue: queue1 });
-export const q1m5 = createMatch({ host: fenix, guest: ceglow, hostScore: 0, guestScore: 0, queue: queue1 });
+export const q1m5 = createMatch({
+  host: fenix,
+  guest: ceglow,
+  hostScore: 0,
+  guestScore: 0,
+  queue: queue1,
+  isPostponed: ceglow,
+});
 export const q1m6 = createMatch({ host: goldenBoys, guest: afm, hostScore: 3, guestScore: 0, queue: queue1 });
 // queue2
 export const q2m1 = createMatch({
   host: afm,
   guest: pvu,
   hostScore: 0,
-  guestScore: 0,
+  guestScore: 3,
   queue: queue2,
-  isPostponed: pvu,
 });
 export const q2m2 = createMatch({ host: ceglow, guest: goldenBoys, hostScore: 1, guestScore: 3, queue: queue2 });
 export const q2m3 = createMatch({ host: blackteam, guest: fenix, hostScore: 1, guestScore: 3, queue: queue2 });
@@ -58,12 +70,26 @@ export const q2m4 = createMatch({ host: brzoze, guest: watra, hostScore: 0, gues
 export const q2m5 = createMatch({ host: halinow, guest: fabos, hostScore: 0, guestScore: 3, queue: queue2 });
 export const q2m6 = createMatch({ host: kaluszyn, guest: ekonom, hostScore: 3, guestScore: 0, queue: queue2 });
 // queue3
-export const q3m1 = createMatch({ host: pvu, guest: ekonom, hostScore: 0, guestScore: 0, queue: queue3 });
-export const q3m2 = createMatch({ host: fabos, guest: kaluszyn, hostScore: 0, guestScore: 0, queue: queue3 });
+export const q3m1 = createMatch({ host: pvu, guest: ekonom, hostScore: 0, guestScore: 3, queue: queue3 });
+export const q3m2 = createMatch({ host: fabos, guest: kaluszyn, hostScore: 3, guestScore: 2, queue: queue3 });
 export const q3m3 = createMatch({ host: watra, guest: halinow, hostScore: 0, guestScore: 0, queue: queue3 });
-export const q3m4 = createMatch({ host: fenix, guest: brzoze, hostScore: 0, guestScore: 0, queue: queue3 });
-export const q3m5 = createMatch({ host: goldenBoys, guest: blackteam, hostScore: 0, guestScore: 0, queue: queue3 });
-export const q3m6 = createMatch({ host: afm, guest: ceglow, hostScore: 0, guestScore: 0, queue: queue3 });
+export const q3m4 = createMatch({
+  host: fenix,
+  guest: brzoze,
+  hostScore: 0,
+  guestScore: 0,
+  queue: queue3,
+  isPostponed: fenix,
+});
+export const q3m5 = createMatch({
+  host: goldenBoys,
+  guest: blackteam,
+  hostScore: 0,
+  guestScore: 0,
+  queue: queue3,
+  isPostponed: blackteam,
+});
+export const q3m6 = createMatch({ host: afm, guest: ceglow, hostScore: 3, guestScore: 1, queue: queue3 });
 // queue4
 export const q4m1 = createMatch({ host: ceglow, guest: pvu, hostScore: 0, guestScore: 0, queue: queue4 });
 export const q4m2 = createMatch({ host: blackteam, guest: afm, hostScore: 0, guestScore: 0, queue: queue4 });
@@ -114,7 +140,7 @@ export const q10m4 = createMatch({ host: fabos, guest: ceglow, hostScore: 0, gue
 export const q10m5 = createMatch({ host: watra, guest: afm, hostScore: 0, guestScore: 0, queue: queue10 });
 export const q10m6 = createMatch({ host: fenix, guest: goldenBoys, hostScore: 0, guestScore: 0, queue: queue10 });
 // queue11
-export const q11m1 = createMatch({ host: goldenBoys, guest: pvu, hostScore: 0, guestScore: 0, queue: queue11 });
+export const q11m1 = createMatch({ host: goldenBoys, guest: pvu, hostScore: 3, guestScore: 0, queue: queue11 });
 export const q11m2 = createMatch({ host: afm, guest: fenix, hostScore: 0, guestScore: 0, queue: queue11 });
 export const q11m3 = createMatch({ host: ceglow, guest: watra, hostScore: 0, guestScore: 0, queue: queue11 });
 export const q11m4 = createMatch({ host: blackteam, guest: fabos, hostScore: 0, guestScore: 0, queue: queue11 });

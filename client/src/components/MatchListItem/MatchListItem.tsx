@@ -13,9 +13,9 @@ const MatchListItem: React.FC<MatchListItemProps> = ({ match, className = '', di
   const { host, hostScore, guest, guestScore, isPostponed, queue } = match;
   return (
     <div className={`border-b overflow-hidden ${className} ${isPostponed ? 'bg-gray-200' : ''}`}>
-      <div className="flex items-center flex-wrap md:flex-nowrap">
+      <div>
         {displayDate && (
-          <div className="w-full md:w-auto md:mr-4">
+          <div className="w-full md:w-auto md:mr-4 text-center">
             <p className="text-lg md:text-xl">Kolejka {queue.number}</p>
             <p className="text-lg md:text-xl">{dayjs(queue.date).format('DD.MM.YYYY')}</p>
           </div>

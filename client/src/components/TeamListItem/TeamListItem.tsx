@@ -10,7 +10,7 @@ interface TeamListItemProps {
 }
 
 const TeamListItem: React.FC<TeamListItemProps> = ({ team, className }) => {
-  const { name, id, image } = team;
+  const { name, id, image, address } = team;
   return (
     <div className={`bg-white shadow-md ${className}`}>
       <Link href={generatePath({ type: 'team', slug: id })}>
@@ -19,7 +19,8 @@ const TeamListItem: React.FC<TeamListItemProps> = ({ team, className }) => {
             <img src={image || DEFAULT_TEAM_IMAGE} alt={name} className="w-full h-full object-center object-contain" />
           </div>
           <div className="p-4">
-            <h2 className="font-medium text-lg">{name}</h2>
+            <h2 className="font-medium text-lg mb-2">{name}</h2>
+            <p>{address}</p>
           </div>
         </a>
       </Link>

@@ -75,16 +75,10 @@ export const createTable = (matches: Match[]): TableItem[] => {
     const [hostTableItem, guestTableItem] = calculateMatchToTableItem(match);
     const hostId = hostTableItem.team.id;
     const guestId = guestTableItem.team.id;
-    if (tableItems[hostId]) {
-      tableItems[hostId] = mergeTableItems(tableItems[hostId], hostTableItem);
-    } else {
-      tableItems[hostId] = hostTableItem;
-    }
-    if (tableItems[guestId]) {
-      tableItems[guestId] = mergeTableItems(tableItems[guestId], hostTableItem);
-    } else {
-      tableItems[guestId] = guestTableItem;
-    }
+    const currentHostValue = tableItems[hostId];
+    const currentGuestValue = tableItems[guestId];
+    tableItems[hostId] = currentHostValue ? mergeTableItems(tableItems[hostId], hostTableItem) : hostTableItem;
+    tableItems[guestId] = currentGuestValue ? mergeTableItems(tableItems[guestId], guestTableItem) : guestTableItem;
   });
 
   const table = Object.keys(tableItems).map((key) => tableItems[key]);
