@@ -83,5 +83,7 @@ export const createTable = (matches: Match[]): TableItem[] => {
 
   const table = Object.keys(tableItems).map((key) => tableItems[key]);
 
-  return sortBy(table, ['points']).reverse();
+  // console.table(sortBy(table, ['points']).reverse());
+
+  return sortBy(table, ['points', 'wonMatches', 'setDifference', 'wonSets']).reverse();
 };

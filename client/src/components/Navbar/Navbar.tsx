@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
     <div className="w-full bg-white shadow-md">
       <Container component="header" className="flex items-center relative">
         <Link href={generatePath({ type: 'home' })}>
-          <a className="px-4 py-6 md:mr-auto">LOGO</a>
+          <a className="px-4 py-6 md:mr-auto">PLS Mińsk Maz</a>
         </Link>
         <div className="md:hidden">
           <MobileMenuButton open={mobileMenuOpen} setOpen={(open) => setMobileMenuOpen(open)} />
