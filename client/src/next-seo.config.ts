@@ -11,8 +11,8 @@ export default {
     images: [
       {
         url: 'https://pls-minsk.vercel.app/pls_img.jpg',
-        width: 1080,
-        height: 800,
+        width: 1271,
+        height: 941,
         alt: 'PLS Mińsk Maz',
       },
     ],
