@@ -8,5 +8,13 @@ export default {
     locale: 'pl_PL',
     site_name: 'PLS',
     description: DEFAULT_DESCRIPTION,
+    images: [
+      {
+        url: '/pls_img.jpg',
+        width: 400,
+        height: 400,
+        alt: 'PLS Mińsk Maz',
+      },
+    ],
   },
 };
