@@ -10,7 +10,7 @@ export default {
     description: DEFAULT_DESCRIPTION,
     images: [
       {
-        url: '/pls_img.jpg',
+        url: 'https://pls-minsk.vercel.app/pls_img.jpg',
         width: 1080,
         height: 800,
         alt: 'PLS Mińsk Maz',
