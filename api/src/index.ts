@@ -11,12 +11,19 @@ import { createConnection } from 'typeorm';
 import { HelloResolver } from './resolvers/hello';
 import { PostResolver } from './resolvers/post';
 import { UserResolver } from './resolvers/user';
+import { TeamResolver } from './resolvers/team';
+import { MatchResolver } from './resolvers/match';
 import { AUTH_COOKIE_NAME, prod } from './constants';
 import { MyContext } from './types';
 import { Post } from './entities/Post';
 import { User } from './entities/User';
 import { Updoot } from './entities/Updoot';
+import { Team } from './entities/Team';
 import { createUserLoader } from './utils/createUserLoader';
+import { createMatchesLoader } from './utils/createMatchesLoader';
+import { createTeamsLoader, createHostTeamsLoader, createGuestTeamsLoader } from './utils/createTeamsLoader';
+import { Match } from './entities/Match';
+import { MatchToTeam } from './entities/MatchToTeam';
 
 const main = async () => {
   const connection = await createConnection({
@@ -27,12 +34,10 @@ const main = async () => {
     logging: true,
     synchronize: true,
     migrations: [path.join(__dirname, './migrations/*')],
-    entities: [Post, User, Updoot],
+    entities: [Post, User, Updoot, Team, Match, MatchToTeam],
   });
-  console.log('migratios');
-  await connection.runMigrations();
 
-  // await Post.delete({});
+  await connection.runMigrations();
 
   const RedisStore = connectRedis(session);
   const redis = new Redis();
@@ -64,10 +69,19 @@ const main = async () => {
 
   const apolloServer = new ApolloServer({
     schema: await buildSchema({
-      resolvers: [HelloResolver, PostResolver, UserResolver],
+      resolvers: [HelloResolver, PostResolver, UserResolver, TeamResolver, MatchResolver],
       validate: false,
     }),
-    context: ({ req, res }): MyContext => ({ req, res, redis, userLoader: createUserLoader() }),
+    context: ({ req, res }): MyContext => ({
+      req,
+      res,
+      redis,
+      userLoader: createUserLoader(),
+      matchesLoader: createMatchesLoader(),
+      teamsLoader: createTeamsLoader(),
+      hostTeamsLoader: createHostTeamsLoader(),
+      guestTeamsLoader: createGuestTeamsLoader(),
+    }),
   });
 
   apolloServer.applyMiddleware({ app, cors: false });

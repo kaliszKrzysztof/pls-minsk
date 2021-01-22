@@ -3,7 +3,7 @@ import argon2 from 'argon2';
 import { v4 } from 'uuid';
 import { AUTH_COOKIE_NAME, FORGET_PASSWORD_PREFIX } from '../constants';
 import { MyContext } from '../types';
-import { User } from '../entities/User';
+import { Role, User } from '../entities/User';
 import { sendEmail } from '../utils/sendEmail';
 
 @InputType()
@@ -110,6 +110,26 @@ export class UserResolver {
     }
     const user = await User.findOne(userId);
     return user;
+  }
+
+  @Mutation(() => UserResponse)
+  async createAdminUser(): Promise<UserResponse> {
+    const hashedPassword = await argon2.hash('admin');
+    const user = User.create({ username: 'admin', email: 'admin', password: hashedPassword, roles: [Role.ADMIN] });
+    console.log(user);
+    try {
+      await user.save();
+    } catch (err) {
+      return {
+        errors: [
+          {
+            field: 'username',
+            message: 'User already exists',
+          },
+        ],
+      };
+    }
+    return { user };
   }
 
   @Mutation(() => UserResponse)
