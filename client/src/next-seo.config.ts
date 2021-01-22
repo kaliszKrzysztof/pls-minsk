@@ -11,8 +11,8 @@ export default {
     images: [
       {
         url: '/pls_img.jpg',
-        width: 400,
-        height: 400,
+        width: 1080,
+        height: 800,
         alt: 'PLS Mińsk Maz',
       },
     ],
