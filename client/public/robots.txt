@@ -1,0 +1,3 @@
+User-Agent: *
+Allow: /
+Sitemap: https://pls-minsk.vercel.app/sitemap.xml

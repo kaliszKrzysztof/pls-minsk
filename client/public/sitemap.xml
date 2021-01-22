@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://pls-minsk.vercel.app/</loc>
+  <lastmod>2021-01-22T09:44:39+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://pls-minsk.vercel.app/mecze</loc>
+  <lastmod>2021-01-22T09:44:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pls-minsk.vercel.app/tabela</loc>
+  <lastmod>2021-01-22T09:44:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pls-minsk.vercel.app/druzyny</loc>
+  <lastmod>2021-01-22T09:44:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pls-minsk.vercel.app/druzyna/fenix-siennica</loc>
+  <lastmod>2021-01-22T09:44:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pls-minsk.vercel.app/druzyna/burza-brzoze</loc>
+  <lastmod>2021-01-22T09:44:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pls-minsk.vercel.app/druzyna/golden-boys</loc>
+  <lastmod>2021-01-22T09:44:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pls-minsk.vercel.app/druzyna/blackteam-minsk-mazowiecki</loc>
+  <lastmod>2021-01-22T09:44:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pls-minsk.vercel.app/druzyna/ekonom-volleyball-team</loc>
+  <lastmod>2021-01-22T09:44:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pls-minsk.vercel.app/druzyna/fabos-minsk-mazowiecki</loc>
+  <lastmod>2021-01-22T09:44:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pls-minsk.vercel.app/druzyna/pvu-minsk-mazowiecki</loc>
+  <lastmod>2021-01-22T09:44:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pls-minsk.vercel.app/druzyna/ks-halinow</loc>
+  <lastmod>2021-01-22T09:44:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pls-minsk.vercel.app/druzyna/afm-team</loc>
+  <lastmod>2021-01-22T09:44:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pls-minsk.vercel.app/druzyna/ks-kaluszyn</loc>
+  <lastmod>2021-01-22T09:44:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pls-minsk.vercel.app/druzyna/watra-mrozy</loc>
+  <lastmod>2021-01-22T09:44:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pls-minsk.vercel.app/regulamin</loc>
+  <lastmod>2021-01-22T09:44:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pls-minsk.vercel.app/mecze?kolejka=1</loc>
+  <lastmod>2021-01-22T09:44:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pls-minsk.vercel.app/mecze?kolejka=2</loc>
+  <lastmod>2021-01-22T09:44:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pls-minsk.vercel.app/mecze?kolejka=3</loc>
+  <lastmod>2021-01-22T09:44:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pls-minsk.vercel.app/mecze?kolejka=4</loc>
+  <lastmod>2021-01-22T09:44:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pls-minsk.vercel.app/mecze?kolejka=5</loc>
+  <lastmod>2021-01-22T09:44:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pls-minsk.vercel.app/mecze?kolejka=6</loc>
+  <lastmod>2021-01-22T09:44:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pls-minsk.vercel.app/mecze?kolejka=7</loc>
+  <lastmod>2021-01-22T09:44:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pls-minsk.vercel.app/mecze?kolejka=8</loc>
+  <lastmod>2021-01-22T09:44:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pls-minsk.vercel.app/mecze?kolejka=9</loc>
+  <lastmod>2021-01-22T09:44:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pls-minsk.vercel.app/mecze?kolejka=10</loc>
+  <lastmod>2021-01-22T09:44:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pls-minsk.vercel.app/mecze?kolejka=11</loc>
+  <lastmod>2021-01-22T09:44:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pls-minsk.vercel.app/druzyna/jutrzenka-ceglow</loc>
+  <lastmod>2021-01-22T09:44:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
