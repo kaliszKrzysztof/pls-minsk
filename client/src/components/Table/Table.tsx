@@ -1,6 +1,8 @@
 import React from 'react';
 import Tippy from '@tippyjs/react';
 import { TableItem } from 'types';
+import Link from 'next/link';
+import { generatePath } from 'helpers/generatePath';
 
 interface TableProps {
   table: TableItem[];
@@ -50,7 +52,11 @@ const Table: React.FC<TableProps> = ({ table }) => (
         {table.map(({ team, points, finishedMatches, wonMatches, setDifference, wonSets, lostSets }, index) => (
           <tr key={team.id} className="odd:bg-gray-50 hover:bg-gray-100">
             <td className="pl-2 pr-1 py-2 border text-center">{index + 1}</td>
-            <td className="p-2 text-center font-medium border">{team.name}</td>
+            <td className="p-2 text-center font-medium border">
+              <Link href={generatePath({ type: 'team', slug: team.id })}>
+                <a>{team.name}</a>
+              </Link>
+            </td>
             <td className="p-2 text-center border">{points}</td>
             <td className="p-2 text-center border">{finishedMatches}</td>
             <td className="p-2 text-center border">{wonMatches}</td>

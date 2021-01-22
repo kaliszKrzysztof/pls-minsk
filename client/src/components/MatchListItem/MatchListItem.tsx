@@ -2,6 +2,8 @@ import React from 'react';
 import clsx from 'clsx';
 import { Match } from 'types';
 import { parse } from 'helpers/date';
+import Link from 'next/link';
+import { generatePath } from 'helpers/generatePath';
 
 interface MatchListItemProps {
   match: Match;
@@ -21,7 +23,11 @@ const MatchListItem: React.FC<MatchListItemProps> = ({ match, className = '', di
           </div>
         )}
         <div className="flex-1 flex flex-wrap items-center justify-center py-2">
-          <h2 className="text-lg sm:text-xl md:text-2xl flex-1 text-right break-words">{host.name}</h2>
+          <h2 className="text-lg sm:text-xl md:text-2xl flex-1 text-right break-words">
+            <Link href={generatePath({ type: 'team', slug: host.id })}>
+              <a>{host.name}</a>
+            </Link>
+          </h2>
           <div className="text-center px-3 md:px-8 text-gray-400">
             <span
               className={clsx('text-4xl md:text-6xl font-medium', {
@@ -41,11 +47,19 @@ const MatchListItem: React.FC<MatchListItemProps> = ({ match, className = '', di
               {guestScore}
             </span>
           </div>
-          <h2 className="text-lg sm:text-xl md:text-2xl flex-1 break-words">{guest.name}</h2>
+          <h2 className="text-lg sm:text-xl md:text-2xl flex-1 break-words">
+            <Link href={generatePath({ type: 'team', slug: guest.id })}>
+              <a>{guest.name}</a>
+            </Link>
+          </h2>
           {!!isPostponed && (
             <div className="w-full">
               <h3 className="text-center pt-4">
-                Mecz został przełożony na prośbę drużyny <span className="font-medium">{isPostponed.name}</span>
+                Mecz został przełożony na prośbę drużyny
+                <span>&nbsp;</span>
+                <Link href={generatePath({ type: 'team', slug: isPostponed.id })}>
+                  <a className="font-medium">{isPostponed.name}</a>
+                </Link>
               </h3>
             </div>
           )}
