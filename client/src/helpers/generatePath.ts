@@ -1,3 +1,5 @@
+export const { HOST } = process.env;
+
 type GeneratePathParams =
   | {
       type: 'team';
@@ -43,3 +45,5 @@ export const generatePath = (params: GeneratePathParams): string => {
     }
   }
 };
+
+export const decorateWithHost = (path: string): string => `${process.env.NEXT_PUBLIC_HOST}${path}`;

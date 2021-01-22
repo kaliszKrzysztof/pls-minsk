@@ -10,6 +10,9 @@ import Matches from 'components/Matches';
 import PageHeader from 'components/PageHeader';
 import { getMatchesByTeam, getTeamPostponedMatches } from 'helpers/match';
 import Container from 'components/Container';
+import { decorateWithHost, generatePath } from 'helpers/generatePath';
+import { NextSeo } from 'next-seo';
+import { createOpenGraph } from 'helpers/openGraph';
 
 interface TeamProps {
   team: ITeam;
@@ -17,20 +20,31 @@ interface TeamProps {
   postponedMatches: Match[];
 }
 
-const TeamPage: NextPage<TeamProps> = ({ team, matches, postponedMatches }) => (
-  <Container component="main" className="py-12">
-    <Team team={team} />
-    {matches.length > 0 && (
-      <>
-        <PageHeader
-          component="h2"
-          text={postponedMatches.length > 0 ? `Mecze (liczba przełożonych:  ${postponedMatches.length})` : 'Mecze'}
-        />
-        <Matches matches={matches} />
-      </>
-    )}
-  </Container>
-);
+const TeamPage: NextPage<TeamProps> = ({ team, matches, postponedMatches }) => {
+  const selfHref = decorateWithHost(generatePath({ type: 'team', slug: team.id }));
+
+  return (
+    <>
+      <NextSeo
+        title={team.name}
+        canonical={selfHref}
+        openGraph={createOpenGraph({ title: team.name, url: selfHref })}
+      />
+      <Container component="main" className="py-12">
+        <Team team={team} />
+        {matches.length > 0 && (
+          <>
+            <PageHeader
+              component="h2"
+              text={postponedMatches.length > 0 ? `Mecze (liczba przełożonych:  ${postponedMatches.length})` : 'Mecze'}
+            />
+            <Matches matches={matches} />
+          </>
+        )}
+      </Container>
+    </>
+  );
+};
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = teams.map((team) => ({ params: { id: team.id } }));

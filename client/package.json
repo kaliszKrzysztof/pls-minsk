@@ -19,6 +19,7 @@
     "isomorphic-unfetch": "^3.1.0",
     "lodash": "^4.17.20",
     "next": "10.0.4",
+    "next-seo": "^4.17.0",
     "next-urql": "^2.1.1",
     "postcss": "^8.2.2",
     "react": "17.0.1",
