@@ -60,7 +60,7 @@ interface Params extends ParsedUrlQuery {
 
 export const getStaticProps: GetStaticProps<TeamProps, Params> = async (context) => {
   const params = context.params as Params;
-  const team = getTeamById(params.id);
+  const team = getTeamById(params.id, teams);
   const matches = getMatchesByTeam(params.id, matchesData);
   const postponedMatches = getTeamPostponedMatches(params.id, matchesData);
 

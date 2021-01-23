@@ -42,6 +42,6 @@
 
 // export default withUrqlClient(createUrqlClient)(ChangePassword);
 
-import TestComponent from 'components/TestComonent';
+import TestComponent from 'components/graphqlComponents/TestComonent';
 
 export default TestComponent;

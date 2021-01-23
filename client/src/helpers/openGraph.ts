@@ -8,9 +8,11 @@ interface OpenGraphParams {
   url: string;
 }
 
+export const decorateTitle = (title: string): string => `${title} - PLS Mińsk Maz`;
+
 export const createOpenGraph = ({ title, url, description = DEFAULT_DESCRIPTION }: OpenGraphParams): OpenGraph => ({
   ...SEO.openGraph,
   url,
-  title: `${title} - PLS Mińsk Maz`,
+  title: decorateTitle(title),
   description,
 });

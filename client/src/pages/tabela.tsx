@@ -12,7 +12,7 @@ import { createOpenGraph } from 'helpers/openGraph';
 import { decorateWithHost, generatePath } from 'helpers/generatePath';
 
 interface TableProps {
-  table: TableItem[];
+  table: TableItem[] | null;
   round: Round;
 }
 
@@ -24,10 +24,12 @@ const Teams: NextPage<TableProps> = ({ table, round }) => {
       <NextSeo title="Tabela" canonical={selfHref} openGraph={createOpenGraph({ title: 'Tabela', url: selfHref })} />
       <Container component="main" className="py-12">
         <PageHeader component="h1" text="Tabela" />
-        <div className="py-6 px-3 bg-white shadow-md">
-          <h2 className="text-2xl font-medium mb-6 text-center">{`${round.name} - klasyfikacja generalna`}</h2>
-          <Table table={table} />
-        </div>
+        {table && (
+          <div className="py-6 px-3 bg-white shadow-md">
+            <h2 className="text-2xl font-medium mb-6 text-center">{`${round.name} - klasyfikacja generalna`}</h2>
+            <Table table={table} />
+          </div>
+        )}
       </Container>
     </>
   );

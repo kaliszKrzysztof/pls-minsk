@@ -1,5 +1,5 @@
 import React from 'react';
-import TestComponent from 'components/TestComonent';
+import TestComponent from 'components/graphqlComponents/TestComonent';
 import NavBar from 'components/NavBar';
 import { withUrqlClient } from 'next-urql';
 import { createUrqlClient } from 'utils/createUrqlClient';

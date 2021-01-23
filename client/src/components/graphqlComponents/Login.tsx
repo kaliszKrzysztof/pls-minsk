@@ -39,6 +39,6 @@
 
 // export default withUrqlClient(createUrqlClient)(LoginPage);
 
-import TestComponent from 'components/TestComonent';
+import TestComponent from 'components/graphqlComponents/TestComonent';
 
 export default TestComponent;

@@ -49,6 +49,6 @@
 
 // export default withUrqlClient(createUrqlClient)(EditPost);
 
-import TestComponent from 'components/TestComonent';
+import TestComponent from 'components/graphqlComponents/TestComonent';
 
 export default TestComponent;

@@ -1,7 +1,7 @@
 import sortBy from 'lodash/sortBy';
 import { Match, TableItem } from 'types';
 
-const calculatePoints = (hostScore: number, guestScore: number): [hostPoints: number, guestPoins: number] => {
+export const calculatePoints = (hostScore: number, guestScore: number): [hostPoints: number, guestPoins: number] => {
   if (hostScore > guestScore) {
     return guestScore === 2 ? [2, 1] : [3, 0];
   }
@@ -11,7 +11,7 @@ const calculatePoints = (hostScore: number, guestScore: number): [hostPoints: nu
   return [0, 0];
 };
 
-const calculateMatchToTableItem = (match: Match): [hostTableItem: TableItem, guestTableItem: TableItem] => {
+export const calculateMatchToTableItem = (match: Match): [hostTableItem: TableItem, guestTableItem: TableItem] => {
   const { host, hostScore, guest, guestScore } = match;
   const [hostPoints, guestPoins] = calculatePoints(hostScore, guestScore);
   if (hostPoints === guestPoins) {
@@ -58,7 +58,7 @@ const calculateMatchToTableItem = (match: Match): [hostTableItem: TableItem, gue
   ];
 };
 
-const mergeTableItems = (currentTableItem: TableItem, newTableItem: TableItem): TableItem => ({
+export const mergeTableItems = (currentTableItem: TableItem, newTableItem: TableItem): TableItem => ({
   team: currentTableItem.team,
   points: currentTableItem.points + newTableItem.points,
   finishedMatches: currentTableItem.finishedMatches + newTableItem.finishedMatches,
@@ -68,7 +68,10 @@ const mergeTableItems = (currentTableItem: TableItem, newTableItem: TableItem): 
   lostSets: currentTableItem.lostSets + newTableItem.lostSets,
 });
 
-export const createTable = (matches: Match[]): TableItem[] => {
+export const createTable = (matches: Match[]): TableItem[] | null => {
+  if (matches.length === 0) {
+    return null;
+  }
   const tableItems: { [key: string]: TableItem } = {};
 
   matches.forEach((match) => {
@@ -82,8 +85,5 @@ export const createTable = (matches: Match[]): TableItem[] => {
   });
 
   const table = Object.keys(tableItems).map((key) => tableItems[key]);
-
-  // console.table(sortBy(table, ['points']).reverse());
-
   return sortBy(table, ['points', 'wonMatches', 'setDifference', 'wonSets']).reverse();
 };
