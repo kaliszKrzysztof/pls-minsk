@@ -141,6 +141,7 @@ describe('table helper', () => {
         lostSets: currentTableItem.lostSets + lostMatchTableItem.lostSets,
         wonSets: currentTableItem.wonSets + lostMatchTableItem.wonSets,
       });
+      expect(true).toBeTruthy();
     });
   });
 
