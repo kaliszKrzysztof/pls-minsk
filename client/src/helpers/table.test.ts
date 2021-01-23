@@ -142,7 +142,6 @@ describe('table helper', () => {
         wonSets: currentTableItem.wonSets + lostMatchTableItem.wonSets,
       });
       expect(true).toBeTruthy();
-      expect(true).toBeTruthy();
     });
   });
 
