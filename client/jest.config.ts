@@ -3,6 +3,6 @@ export default {
   setupFiles: ['<rootDir>/setupTestEnv.ts'],
   setupFilesAfterEnv: ['<rootDir>/setupTests.ts'],
   moduleDirectories: ['node_modules', 'src'],
-  moduleFileExtensions: ['js', 'json', 'ts'],
+  moduleFileExtensions: ['js', 'json', 'ts', 'tsx'],
   roots: ['src'],
 };
