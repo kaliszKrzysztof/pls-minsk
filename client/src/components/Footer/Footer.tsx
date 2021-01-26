@@ -26,7 +26,7 @@ const Footer: React.FC = () => (
   <div className="bg-white shadow-md">
     <Container component="footer" className="grid grid-cols-12 gap-4 pt-6 pb-2">
       <div className="col-span-12 md:col-span-4 text-center">
-        <img src="/logo.png" alt="PLS Mińsk Maz" width="240" className="mx-auto mb-4 md:mb-0 md:mt-2" />
+        <img loading="lazy" src="/logo.png" alt="PLS Mińsk Maz" width="240" className="mx-auto mb-4 md:mb-0 md:mt-2" />
       </div>
       <div className="col-span-12 md:col-span-4 text-center">
         <h2 className="text-xl font-medium mb-4">Przydatne linki</h2>
