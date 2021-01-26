@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import Tippy from '@tippyjs/react';
 import { generatePath } from 'helpers/generatePath';
 import Container from 'components/Container';
 import Navigation from 'components/Navigation';
@@ -26,7 +27,11 @@ const Navbar: React.FC = () => {
     <div className="w-full bg-white shadow-md">
       <Container component="header" className="flex items-center relative">
         <Link href={generatePath({ type: 'home' })}>
-          <a className="px-4 py-6 md:mr-auto">PLS Mińsk Maz</a>
+          <a className="py-2 pr-4 md:pr-0 md-py-0 md:mr-auto">
+            <Tippy content="Powiatowa Liga Siatkówki w Mińsku Mazowieckim">
+              <img src="/logo_small.gif" alt="PLS Mińsk Maz" width="80" />
+            </Tippy>
+          </a>
         </Link>
         <div className="relative md:hidden ml-2">
           <span className="absolute -left-3 h-full w-px bg-gray-200" />

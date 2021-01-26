@@ -25,17 +25,20 @@ const navItems = [
 const Footer: React.FC = () => (
   <div className="bg-white shadow-md">
     <Container component="footer" className="grid grid-cols-12 gap-4 pt-6 pb-2">
-      <div className="col-span-12 md:cols-span-4 text-center">
+      <div className="col-span-12 md:col-span-4 text-center">
+        <img loading="lazy" src="/logo.png" alt="PLS Mińsk Maz" width="240" className="mx-auto mb-4 md:mb-0 md:mt-2" />
+      </div>
+      <div className="col-span-12 md:col-span-4 text-center">
         <h2 className="text-xl font-medium mb-4">Przydatne linki</h2>
-        <ul>
+        <ul data-testid="links">
           {navItems.map((navItem) => (
-            <li key={navItem.label} className="mb-3">
+            <li data-testid="footer-link" key={navItem.label} className="mb-3">
               <Link href={navItem.href}>
                 <a>{navItem.label}</a>
               </Link>
             </li>
           ))}
-          <li className="mb-3">
+          <li data-testid="footer-link" className="mb-3">
             <a href="http://plsminsk.fora.pl/" target="_blank" rel="noopener noreferrer">
               Forum
             </a>
@@ -43,7 +46,7 @@ const Footer: React.FC = () => (
         </ul>
       </div>
       <div className="col-span-12 p-4 text-center">
-        <p>Copyright © 2021</p>
+        <p data-testid="copyright">Copyright © {new Date().getFullYear()}</p>
       </div>
     </Container>
   </div>
