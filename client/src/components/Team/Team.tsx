@@ -19,6 +19,7 @@ const Team: React.FC<TeamProps> = ({ team }) => {
             alt={name}
             className="bg-gray-300 h-full w-full object-cover"
             height="302"
+            width="604"
           />
         </div>
         <div className="w-full md:w-auto md:flex-1">
