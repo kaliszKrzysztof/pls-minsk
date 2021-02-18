@@ -16,7 +16,12 @@ const TeamListItem: React.FC<TeamListItemProps> = ({ team, className }) => {
       <Link href={generatePath({ type: 'team', slug: id })}>
         <a className="block outline-none">
           <div className="h-full max-h-64 bg-gray-300">
-            <img src={image || DEFAULT_TEAM_IMAGE} alt={name} className="w-full h-full object-center object-contain" />
+            <img
+              src={image || DEFAULT_TEAM_IMAGE}
+              alt={name}
+              className="w-full h-full object-center object-contain"
+              height="200"
+            />
           </div>
           <div className="p-4">
             <h2 className="font-medium text-lg mb-2">{name}</h2>
