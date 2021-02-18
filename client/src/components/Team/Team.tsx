@@ -14,7 +14,13 @@ const Team: React.FC<TeamProps> = ({ team }) => {
       <PageHeader component="h1" text={name} />
       <div className="bg-white p-3 mb-4 shadow-md flex flex-wrap md:flex-nowrap">
         <div className="w-full md:w-auto md:flex-1 md:mr-4">
-          <img src={image || DEFAULT_TEAM_IMAGE} alt={name} className="bg-gray-300 h-full w-full object-cover" />
+          <img
+            src={image || DEFAULT_TEAM_IMAGE}
+            alt={name}
+            className="bg-gray-300 h-full w-full object-cover"
+            height="302"
+            width="604"
+          />
         </div>
         <div className="w-full md:w-auto md:flex-1">
           <div className="py-4">

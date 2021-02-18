@@ -7,7 +7,7 @@ interface CollapseProps {
 const Collapse: React.FC<CollapseProps> = ({ open, children }) => {
   const collapseRef = React.useRef<HTMLDivElement>(null);
   const [scrollHeight, setScrollHeight] = React.useState(0);
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     if (open) {
       const sh = collapseRef.current ? collapseRef.current.scrollHeight : 0;
       setScrollHeight(sh);
