@@ -21,6 +21,7 @@ const TeamListItem: React.FC<TeamListItemProps> = ({ team, className }) => {
               alt={name}
               className="w-full h-full object-center object-contain"
               height="200"
+              width="400"
             />
           </div>
           <div className="p-4">
