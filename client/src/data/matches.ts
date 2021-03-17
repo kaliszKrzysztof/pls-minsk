@@ -140,10 +140,9 @@ export const q6m3 = createMatch({
 export const q6m4 = createMatch({
   host: kaluszyn,
   guest: goldenBoys,
-  hostScore: 0,
+  hostScore: 3,
   guestScore: 0,
   queue: queue6,
-  isPostponed: goldenBoys,
 });
 export const q6m5 = createMatch({ host: ekonom, guest: fenix, hostScore: 3, guestScore: 1, queue: queue6 });
 export const q6m6 = createMatch({ host: fabos, guest: watra, hostScore: 0, guestScore: 3, queue: queue6 });
@@ -190,9 +189,8 @@ export const q11m5 = createMatch({
   host: brzoze,
   guest: ekonom,
   hostScore: 0,
-  guestScore: 0,
+  guestScore: 3,
   queue: queue11,
-  isPostponed: brzoze,
 });
 export const q11m6 = createMatch({ host: halinow, guest: kaluszyn, hostScore: 0, guestScore: 3, queue: queue11 });
 
