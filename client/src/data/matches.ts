@@ -174,7 +174,7 @@ export const q9m4 = createMatch({ host: ceglow, guest: ekonom, hostScore: 1, gue
 export const q9m5 = createMatch({ host: blackteam, guest: kaluszyn, hostScore: 0, guestScore: 3, queue: queue9 });
 export const q9m6 = createMatch({ host: brzoze, guest: halinow, hostScore: 3, guestScore: 1, queue: queue9 });
 // queue10
-export const q10m1 = createMatch({ host: pvu, guest: halinow, hostScore: 0, guestScore: 0, queue: queue10 });
+export const q10m1 = createMatch({ host: pvu, guest: halinow, hostScore: 3, guestScore: 1, queue: queue10 });
 export const q10m2 = createMatch({ host: kaluszyn, guest: brzoze, hostScore: 3, guestScore: 0, queue: queue10 });
 export const q10m3 = createMatch({ host: ekonom, guest: blackteam, hostScore: 3, guestScore: 0, queue: queue10 });
 export const q10m4 = createMatch({ host: fabos, guest: ceglow, hostScore: 3, guestScore: 1, queue: queue10 });
