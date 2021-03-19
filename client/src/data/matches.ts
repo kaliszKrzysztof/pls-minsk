@@ -81,10 +81,9 @@ export const q3m3 = createMatch({
 export const q3m4 = createMatch({
   host: fenix,
   guest: brzoze,
-  hostScore: 0,
+  hostScore: 3,
   guestScore: 0,
   queue: queue3,
-  isPostponed: fenix,
 });
 export const q3m5 = createMatch({
   host: goldenBoys,
@@ -109,10 +108,9 @@ export const q4m5 = createMatch({ host: kaluszyn, guest: watra, hostScore: 3, gu
 export const q4m6 = createMatch({
   host: ekonom,
   guest: fabos,
-  hostScore: 0,
-  guestScore: 0,
+  hostScore: 3,
+  guestScore: 2,
   queue: queue4,
-  isPostponed: fabos,
 });
 // queue5
 export const q5m1 = createMatch({ host: fabos, guest: pvu, hostScore: 3, guestScore: 1, queue: queue5 });
